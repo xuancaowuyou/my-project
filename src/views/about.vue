@@ -1,6 +1,7 @@
 <template>
     <div>
-        我是about
+        <p>我是about</p>
+        <input type="text" v-focus /><button>搜索</button>
     </div>
 </template>
 <script>
