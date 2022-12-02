@@ -1,12 +1,16 @@
 <template>
     <div>
-      <div>{{$store.state.count}}<button @click="handleAdd">++</button></div>
-        <p>我是home--按钮权限（自定义指令）</p>
+        <h3>我是home</h3>
+        <div>______________________</div>
+        <p>按钮权限（自定义指令）</p>
         <div>
           <button v-has="'add'">添加</button>
           <button v-has="'edit'">编辑</button>
           <button v-has="'delete'">删除</button>
         </div>
+        <div>______________________</div>
+        <p> input自动获取焦点（自定义指令）</p>
+        <input type="text" v-focus /><button>搜索</button>
     </div>
 </template>
 <script>
@@ -17,8 +21,11 @@ export default {
     return{
     }
   },
+  created(){
+    const permissionArray = ['add','edit'];
+    localStorage.setItem('permissionArray',JSON.stringify(permissionArray))
+  },
   mounted(){
-    // console.log(this.$store.state.count)
     this.$store.dispatch('a_token').then(res=>{
       if(res.data.code==1000){
         localStorage.setItem('accessToken',res.data.data.accessToken)
@@ -35,11 +42,10 @@ export default {
     },2000)
  
   },
+  destroyed(){
+    localStorage.removeItem('permissionArray');
+  },
   methods:{
-    handleAdd(){
-      let newVal =this.$store.state.count++;
-      this.$store.m_add_count(newVal)
-    }
   }
 }
 </script>

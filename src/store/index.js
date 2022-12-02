@@ -11,8 +11,8 @@ const store =  new Vuex.Store({
     },
     getters: {}, 
     mutations: {
-        m_add_count(state,data) {
-            state.count = data
+        m_add_count(state, data) {
+            state.count = data;
         },
         m_logistics(state, data) {
             state.logistics = data;
