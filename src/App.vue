@@ -14,7 +14,6 @@ export default {
     // HelloWorld
   },
   mounted(){
-    console.log(this.$store.state.count)
   }
 }
 </script>

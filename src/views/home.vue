@@ -19,7 +19,21 @@ export default {
   },
   mounted(){
     // console.log(this.$store.state.count)
-
+    this.$store.dispatch('a_token').then(res=>{
+      if(res.data.code==1000){
+        localStorage.setItem('accessToken',res.data.data.accessToken)
+      }
+    })
+    let that = this
+    setTimeout(function(){
+      let params = {
+        querySort:['id']
+      }
+         that.$store.dispatch('a_logistics',params).then(res=>{
+          console.log(res)
+      })
+    },2000)
+ 
   },
   methods:{
     handleAdd(){
