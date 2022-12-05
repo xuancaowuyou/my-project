@@ -28,7 +28,6 @@ const store =  new Vuex.Store({
             // if (result.code = 200) {
                 // commit('m_logistics', result.data);
             // }
-            console.log(content)
             return result;
         }
     },

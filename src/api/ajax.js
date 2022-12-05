@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const ajax = axios.create({
+const instance = axios.create({
     baseURL: '',
     timeout: 5000,
     headers: {
@@ -9,17 +9,17 @@ const ajax = axios.create({
     }
 })
 //请求拦截器
-ajax.interceptors.request.use((config) => { 
+instance.interceptors.request.use((config) => { 
     config.headers.access_token = localStorage.getItem('accessToken')
     return config;
 }, error => {
     return Promise.reject(error)
 })
 //2、拦截响应
-ajax.interceptors.response.use(response => {
+instance.interceptors.response.use(response => {
     return response
  },error => {
     return Promise.reject(error)
 })
 
-export default ajax;
+export default instance;

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="height:2000px;">
         <h3>我是home</h3>
         <div>______________________</div>
         <p>按钮权限（自定义指令）</p>
@@ -36,7 +36,7 @@ export default {
       let params = {
         querySort:['id']
       }
-         that.$store.dispatch('a_logistics',params).then(res=>{
+      that.$store.dispatch('a_logistics',params).then(res=>{
           console.log(res)
       })
     },2000)

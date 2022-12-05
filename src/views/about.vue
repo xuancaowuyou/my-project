@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="height:2000px;">
         <p>我是about</p>
         <div>--------------------</div>
         <div>1、ref和nextTick的使用</div>

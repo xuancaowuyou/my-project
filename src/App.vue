@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <router-link to="/home">home</router-link>
-    <router-link to="/about">about</router-link>
-    <router-view></router-view>
+    <!-- <router-link to="/home">home</router-link> -->
+    <!-- <router-link to="/about">about</router-link> -->
+    <!-- <router-view></router-view> -->
+    <hello-world :msg.sync="msg"></hello-world>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'App',
+  data(){
+    return{
+      msg:'父组件传值'
+    }
+  },
   components: {
-    // HelloWorld
+    HelloWorld
   },
   mounted(){
   }
